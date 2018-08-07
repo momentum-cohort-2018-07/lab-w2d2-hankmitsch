@@ -2,20 +2,64 @@
 // returns the sum of those numbers.
 
 function sum (numbers) {
-  console.log('numbers', numbers)
-  return 0
+  var totalSum = 0
+  for (var i = 0; i <numbers.length; i++) {
+   totalSum += numbers[i]
+  }
+  return totalSum
 }
+  
 
 // 2. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+ 
+// function average (numbers) {
+//   var averageNum = 0
+  
+//   if (numbers.length === 0){
+//     return
+//   }
+//   for (var i = 0; i<numbers.length; i++) {
+//     averageNum += numbers[i]
+//     }
+//     return averageNum/numbers.length
+//   }
+function average (numbers){
+if (numbers.length === 0){
+  return
+}
+return sum (numbers) / numbers.length
+}
 
 // 3. Create a function called "intersection" that takes two arrays and
 // returns a new array that contains the elements found in both arrays.
 // The order they are in does not matter, but no duplicates should be
 // in the returned array, even if they were in the input.
+function intersection(array1, array2){
+  var commonElements = [];
+    for (var i=0; i<array1.length; i++){
+      for (var j=0; j<array2.length; j++){
+        if (array1[i] === array2[j]){
+          commonElements.push(array1[i])
+        }        
+      }
+    }
+return commonElements
+}
 
 // 4. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+
+function minimum (numbers) {
+var min = numbers[0]
+
+for (var i = 0; i < numbers.length; i++) {
+  if (numbers[i] < min) {
+    min = numbers[i];
+  }
+}
+return min
+}
 
 // 5. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -45,9 +89,31 @@ function sum (numbers) {
 // and returns an object with the keys "name" and "dob" (date of birth) with
 // those values.
 
+function createUser(name, date){
+    var user = {
+      name : name,
+      dob : date
+    }
+    return user
+}
+
 // 7. Create a function called "calculateAge" that takes a user created from
 // createUser and a Date object considered the current date, and calculates the user's
 // age in years on that date. You can use your code from yesterday's homework.
+        // function howOld (date1,date2){
+        //   date1 = new Date(date1)
+        //   date2 = new Date(date2)
+        //   var ms =(date2.getTime() - date1.getTime())
+        //   if (date1<=date2){
+        //       return Math.trunc(ms/(1000*60*60*24*365.25))
+        //   } else {
+        //       return
+        //   }
+        // }
+        // function calculateAge (user, date){
+
+        // }
+
 
 // 8. Create a function called "addAge" that takes a user created from createUser
 // and a Date object and adds a new key on the user object, "age", with the age
